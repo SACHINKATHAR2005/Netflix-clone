@@ -1,0 +1,57 @@
+.movie-tile {
+    display: inline-flex;
+    flex-direction: row;
+    position: relative; /* For absolute positioning of the button */
+    width: 300px; /* Adjust card width as needed */
+    margin: 15px; /* Add spacing between cards */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Ensure content stays within the card bounds */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+    background-color: #1c1c1c; /* Dark background for movie info */
+    color: #fff; /* Text color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+}
+
+.movie-tile:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.movie-poster {
+    width: 100%; /* Ensure the image fits the card width */
+    height: 400px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Crop image to fill the container */
+}
+
+.movie-tile .btna {
+    position: absolute; /* Position button relative to the card */
+    bottom: 20px; /* Adjust position as needed */
+    right: 20px; /* Adjust position as needed */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+    border: 0;
+    outline: 0;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.movie-tile:hover .btna {
+    opacity: 1; /* Show button on hover */
+}
+
+.btna.dark-btna {
+    color: white;
+    background: #6d6d6eb3;
+    border-radius: 100%;
+    width: 7px;
+    height: 7px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
