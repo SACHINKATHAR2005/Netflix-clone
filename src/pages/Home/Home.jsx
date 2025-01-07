@@ -51,14 +51,19 @@ function Home() {
 
       </div>
       <div>
-        <h2 className='popular'>Popular On Netfilx</h2>
-      </div>
-      
-      {
-            movieDetails && movieDetails.length > 0 ?
-            movieDetails.map((movieCard, index)=><MovieTile key={index} movieData={movieCard}/>)
-            : <h3>No Data found</h3>
-      }
+    <h2 className="popular">Popular On Netflix</h2>
+</div>
+
+<div className="movie-grid">
+    {movieDetails && movieDetails.length > 0 ? (
+        movieDetails.map((movieCard, index) => (
+            <MovieTile key={index} movieData={movieCard} />
+        ))
+    ) : (
+        <h3>No Data Found</h3>
+    )}
+</div>
+
     </div>
   )
 }

@@ -34,6 +34,7 @@ const fetchMovies = async()=>{
   useEffect(()=>{
     if (isMoviesLoaded === false) {
       fetchMovies(); 
+     
     }
 
   },[isMoviesLoaded])
@@ -54,35 +55,39 @@ const fetchMovies = async()=>{
     
   }
 
-  console.log(page);
+
   
     
   
   
 
   return (
-    <div className='movies-page'>
-      <Navbar/>
-      <h1 className='movies'>Movies</h1>
-      <div>
-      {
-        movies && movies.length > 0 ?
-        movies.map((moviesData,index)=><MovieTile movieData={moviesData} key={index} />) : <h3>No Data found</h3>
-      }
-
-      </div>
-      <div>
-  {isMoviesLoaded && movies.length > 0 ? (
-    <>
-     
-      <button className='btn go-back' onClick={handleGoBack}>go back</button>
-      <button className='btn load-more' onClick={handleLoadMore}>Load More</button>
-    </>
-  ) : null}
-</div>
-                   
-                   
+    <div className="movies-page">
+    <Navbar />
+    <h1 className="movies">Movies</h1>
+    <div className="movie-tile-container">
+      {movies && movies.length > 0 ? (
+        movies.map((moviesData, index) => (
+          <MovieTile movieData={moviesData} key={index} />
+        ))
+      ) : (
+        <h3>No Data Found</h3>
+      )}
     </div>
+    <div className="btn-container">
+      {isMoviesLoaded && movies.length > 0 && (
+        <>
+          <button className="btn go-back" onClick={handleGoBack}>
+            Go Back
+          </button>
+          <button className="btn load-more" onClick={handleLoadMore}>
+            Load More
+          </button>
+        </>
+      )}
+    </div>
+  </div>
+  
   )
 }
 

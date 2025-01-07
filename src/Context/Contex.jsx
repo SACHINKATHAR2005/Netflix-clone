@@ -13,6 +13,10 @@ const MovieProvider =({children})=>{
     const [singleMovieDeails,setSingleMovieDetail] = useState([]);
     const [movies,setMovies] = useState([]);
     const [isMoviesLoaded, setIsMoviesLoaded] = useState(false);
+    const [myList,setMyList] = useState([]);
+    const [favoirate,setFavoirate] = useState([]);
+    const [latest,setlatest] =useState([]);
+    const [latestMovies,setLatestMovies] = useState([]);
     const naviagte = useNavigate();
 
 
@@ -35,26 +39,30 @@ const fetechMovieDetails = async()=>{
         
     } catch (error) {
         console.log("someting went wrong",error);
+
         
     }
 }
 
 
+
 useEffect(()=>{
     fetechMovieDetails()
+       setFavoirate(JSON.parse(localStorage.getItem("favoirate")) || []);
+        
 },[])
 
 
 
 
 const getMovieDetails= (id)=>{
-    console.log("clicked",id);
+   
     naviagte(`/movieDetails/${id}`)
 
 }
 
 const getIdofheromovie = (id)=>{
-    console.log("clicked",id);
+   
     naviagte(`/movieDetails/${id}`)
 }
 
@@ -62,9 +70,31 @@ const trigerMovies =()=>{
     setIsMoviesLoaded(false)
 }
 
-
-
-
+const getFavouriteMovie = (id) => {
+    console.log(id); // Logs the correct id
+  
+    // // Assuming favoirate is the state holding the array of favorite movies
+    // let fav = [...favoirate]; // Copy the current favorites
+  
+    // // Use findIndex to check if the movie already exists in favorites
+    // let index = fav.findIndex(item => item.id === id); // Use 'id' instead of 'getmovieId'
+  
+    // if (index === -1) {
+    //     // If the movie is not in favorites, add it
+    //     fav.push({ id }); // Only store the id or store the full movie object
+    //     console.log("Movie added to favorites:", id);
+    // } else {
+    //     // If the movie is already in favorites, remove it
+    //     fav.splice(index, 1);
+    //     console.log("Movie removed from favorites:", id);
+    // }
+  
+    // setFavoirate(fav); // Update the state
+    // localStorage.setItem("favoirate", JSON.stringify(fav)); // Store the updated favorites in localStorage
+  
+    // // Ensure navigate has the correct path (optional)
+    naviagte(`/myList/${id}`);
+};
 
     return(
         <GlobelContext.Provider value={{movieDetails,
@@ -79,7 +109,15 @@ const trigerMovies =()=>{
         movies,setMovies,
         isMoviesLoaded, 
         setIsMoviesLoaded,
-        trigerMovies}}>
+        trigerMovies,
+        myList,setMyList,
+        favoirate,setFavoirate,
+        getFavouriteMovie,
+        latest,setlatest,
+        latestMovies,setLatestMovies
+
+
+        }}>
             {children}
         </GlobelContext.Provider>
     )

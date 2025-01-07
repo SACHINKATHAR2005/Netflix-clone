@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SingleMovieCard.css";
 import Navbar from "../Navbar/Navbar";
 
+
 function SingleMovieCard({ movieData }) {
+  
   return (
     <div className="single-movie-container">
       <Navbar/>

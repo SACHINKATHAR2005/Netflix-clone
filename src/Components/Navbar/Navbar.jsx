@@ -25,7 +25,7 @@ function Navbar() {
                         trigerMovies
                     }}>movies</li>
                 <li onClick={()=>naviagte("/latest")}>latest</li>
-                <li onClick={()=>naviagte("/myList")}>my list</li>
+                <li onClick={(id)=>naviagte(`/myList/${id}`)}>my list</li>
 
             </ul>
         </div>

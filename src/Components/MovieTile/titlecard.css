@@ -1,57 +1,110 @@
 .movie-tile {
-    display: inline-flex;
-    flex-direction: row;
-    position: relative; /* For absolute positioning of the button */
-    width: 300px; /* Adjust card width as needed */
-    margin: 15px; /* Add spacing between cards */
-    border-radius: 10px; /* Rounded corners for the card */
-    overflow: hidden; /* Ensure content stays within the card bounds */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
-    background-color: #1c1c1c; /* Dark background for movie info */
-    color: #fff; /* Text color */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+    position: relative;
+    width: 250px; /* Larger card width */
+    height: 375px; /* Larger card height */
+    margin: 20px; /* Slightly larger margin for spacing */
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: #1a1a1a; /* Optional: Background color for empty tiles */
 }
 
 .movie-tile:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: scale(1.08); /* Slightly larger hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .movie-poster {
-    width: 100%; /* Ensure the image fits the card width */
-    height: 400px; /* Set a fixed height for consistency */
-    object-fit: cover; /* Crop image to fill the container */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px; 
 }
 
-.movie-tile .btna {
-    position: absolute; /* Position button relative to the card */
-    bottom: 20px; /* Adjust position as needed */
-    right: 20px; /* Adjust position as needed */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease; /* Smooth transition for visibility */
-    border: 0;
-    outline: 0;
-    padding: 8px 20px;
-    display: inline-flex;
+.movie-info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    background: white;
-    border-radius: 4px;
+}
+
+/* Like button styling */
+.button {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: none;
+    border-radius: 50%;
+    width: 50px; /* Larger button */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    font-size: 18px; /* Larger font size */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: rgba(0, 0, 0, 0.9); /* Default color for the button */
+}
+
+.button:hover {
+    background-color: rgba(255, 0, 0, 0.85); /* Highlighted hover color */
+    color: white;
+    transform: scale(1.15); /* More pronounced hover effect */
+}
+
+/* Liked state for the button */
+.button.liked {
+    background-color: rgba(255, 0, 0, 0.85);
+    color: white;
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5); /* Glow effect for liked state */
+}
+
+.btna {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px; 
+    right: 20px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btna img {
+    width: 20px;
+    height: 20px;
 }
 
 .movie-tile:hover .btna {
-    opacity: 1; /* Show button on hover */
+    opacity: 1; 
 }
 
-.btna.dark-btna {
-    color: white;
-    background: #6d6d6eb3;
-    border-radius: 100%;
-    width: 7px;
-    height: 7px;
-    margin-right: 50px;
-    margin-top: 20px;
+.dark-btna {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.dark-btna img {
+    filter: invert(1); /* Make the icon white for better visibility */
+}
+
+/* Grid container for movie tiles */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for new tile size */
+    gap: 25px; /* Increased spacing between tiles */
+    padding: 30px; /* More padding around the grid */
+    justify-items: center; /* Center-align tiles within their grid cells */
+}
+
+.movieTitle{
+    color: #fff;
+    padding: 0 20px;
+   margin-bottom: 20px ;
 }

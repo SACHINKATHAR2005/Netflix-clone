@@ -1,0 +1,41 @@
+/* Style for the entire page */
+.myList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4; /* Light background color */
+    padding: 0 20px; /* Add padding around the content */
+    width: 100%; /* Make the page span full width */
+    height: 100vh;
+  }
+  
+  /* Style for the navbar container */
+  .header {
+    width: 100%; /* Make navbar span full width */
+  }
+  
+  /* Style for the movie list container */
+  .myList-movies {
+    width: 100%;
+    margin-top: 20px; /* Adds space between the navbar and the movies section */
+    padding-bottom: 20px;
+  }
+  
+  /* Style for the error message */
+  .error {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 500px; /* Adds space between the navbar and the error message */
+    margin-bottom: 30px; /* Adds space below the error message */
+  }
+  
+  /* Style for individual movie tiles container */
+  .movie-tile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
