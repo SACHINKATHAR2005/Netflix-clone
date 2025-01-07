@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import { GlobelContext } from '../../Context/Contex'
-import './Home.css'
+import './home.css'
 import play_icon from "../../assets/play_icon.png"
 import info_icon from "../../assets/info_icon.png"
 import MovieTile from '../../Components/MovieTile/movieCard'
