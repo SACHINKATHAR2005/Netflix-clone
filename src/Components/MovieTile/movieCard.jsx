@@ -19,9 +19,9 @@ const MovieTile = ({ movieData }) => {
 
   return (
     <div className="movie-tile">
-      <img src={img} alt="" className="movie-poster" />
+      <img src={img} alt="" className="movie-poster"  onClick={()=>getMovieDetails(movieData.id)}/>
       <div className="movie-info">
-      <button onClick={()=>getFavouriteMovie(movieData.id)} className="button">like</button>
+      <button  className="button" onClick={()=>getFavouriteMovie(movieData.id)}>like</button>
       </div>
       <div>
       <button className='btna dark-btna' onClick={()=>getMovieDetails(movieData.id)}><img src={ info_icon} alt="" /></button>
