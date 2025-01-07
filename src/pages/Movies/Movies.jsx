@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { GlobelContext } from '../../Context/Contex'
 import Navbar from '../../Components/Navbar/Navbar';
 import MovieTile from '../../Components/MovieTile/movieCard';
-import './Movies.css'
+import './movies.css'
 
 function Movies() {
   const {movies,setMovies,isMoviesLoaded, setIsMoviesLoaded} = useContext(GlobelContext);
