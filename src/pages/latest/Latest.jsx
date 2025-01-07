@@ -33,9 +33,9 @@ function Latest() {
     }
   }, [latestMovies]);
 
-  // Filter movies based on current or previous year
+
   const filteredMovies = latest.filter(movie => {
-    const releaseYear = new Date(movie.release_date).getFullYear(); // Get the release year of the movie
+    const releaseYear = new Date(movie.release_date).getFullYear();
     return releaseYear === year || releaseYear === previousYear;
   });
 
@@ -47,7 +47,7 @@ function Latest() {
       
       <h2>Movies of {previousYear} and {year}</h2> 
 
-      {/* Render filtered movies in a grid */}
+      
       <div className="movie-grid">
         {
           filteredMovies.length > 0 ? 

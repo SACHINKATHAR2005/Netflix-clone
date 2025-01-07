@@ -1,110 +1,51 @@
-.movie-tile {
-    position: relative;
-    width: 250px; /* Larger card width */
-    height: 375px; /* Larger card height */
-    margin: 20px; /* Slightly larger margin for spacing */
-    border-radius: 10px; /* Slightly more rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    background-color: #1a1a1a; /* Optional: Background color for empty tiles */
+* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
 }
 
-.movie-tile:hover {
-    transform: scale(1.08); /* Slightly larger hover effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+.grid-item {
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
 }
 
-.movie-poster {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    border-radius: 10px; 
+.grid-item:hover {
+  transform: scale(1.05);
 }
 
-.movie-info {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 2;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
+.grid-item img {
+  width: 100%;
+  height: auto;
 }
 
-/* Like button styling */
-.button {
-    background-color: rgba(255, 255, 255, 0.85);
-    border: none;
-    border-radius: 50%;
-    width: 50px; /* Larger button */
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 18px; /* Larger font size */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    color: rgba(0, 0, 0, 0.9); /* Default color for the button */
+.grid-item h3 {
+  font-size: 1.25rem;
+  margin: 8px 0;
 }
 
-.button:hover {
-    background-color: rgba(255, 0, 0, 0.85); /* Highlighted hover color */
-    color: white;
-    transform: scale(1.15); /* More pronounced hover effect */
+.grid-item p {
+  font-size: 1rem;
+  margin: 8px 0;
 }
 
-/* Liked state for the button */
-.button.liked {
-    background-color: rgba(255, 0, 0, 0.85);
-    color: white;
-    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5); /* Glow effect for liked state */
+.grid-item .rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
 }
 
-.btna {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 20px; 
-    right: 20px;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.grid-item .rating span {
+  font-size: 1rem;
 }
 
-.btna img {
-    width: 20px;
-    height: 20px;
-}
-
-.movie-tile:hover .btna {
-    opacity: 1; 
-}
-
-.dark-btna {
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 8px;
-}
-
-.dark-btna img {
-    filter: invert(1); /* Make the icon white for better visibility */
-}
-
-/* Grid container for movie tiles */
-.movie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for new tile size */
-    gap: 25px; /* Increased spacing between tiles */
-    padding: 30px; /* More padding around the grid */
-    justify-items: center; /* Center-align tiles within their grid cells */
-}
-
-.movieTitle{
-    color: #fff;
-    padding: 0 20px;
-   margin-bottom: 20px ;
+.grid-item .rating svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffcc00;
 }

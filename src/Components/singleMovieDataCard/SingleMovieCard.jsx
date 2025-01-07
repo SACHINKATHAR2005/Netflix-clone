@@ -8,7 +8,7 @@ function SingleMovieCard({ movieData }) {
   return (
     <div className="single-movie-container">
       <Navbar/>
-      {/* Backdrop Section */}
+      
       <div className="backdrop-section" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movieData.backdrop_path})` }}>
         <div className="backdrop-overlay">
           <h1 className="movie-title">{movieData.title}</h1>
@@ -16,10 +16,10 @@ function SingleMovieCard({ movieData }) {
         </div>
       </div>
 
-      {/* Details Section */}
+  
       <div className="details-section">
         <div className="details-grid">
-          {/* Poster */}
+        
           <div className="poster-container">
             <img
               src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
@@ -28,7 +28,7 @@ function SingleMovieCard({ movieData }) {
             />
           </div>
 
-          {/* Information */}
+          
           <div className="info-container">
             <h2 className="section-title">Overview</h2>
             <p className="overview-text">{movieData.overview}</p>
@@ -59,7 +59,7 @@ function SingleMovieCard({ movieData }) {
         </div>
       </div>
 
-      {/* Episode Navigation */}
+     
       {/* <div className="episode-navigation">
         <span className="episode-link">Cyprus</span>
         <span className="episode-link">Georgia</span>
